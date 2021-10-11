@@ -4,6 +4,11 @@
 
 LinkedList::LinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
+LinkedList::LinkedList(const LinkedList &aLinkedList) : head(nullptr), tail(nullptr), size(0)
+{
+    *this = aLinkedList;
+}
+
 LinkedList::~LinkedList()
 {
     destroy();
