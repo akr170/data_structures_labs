@@ -1,0 +1,20 @@
+ZAYN/Taylor Swift,I don't wanna live forever,4.05,100
+The Chainsmokers,Something just like this,4.07,130
+Jay Sean/Lil Wayne,Down,3.32,500
+Timbaland/Keri Hilson,The way I are,2.59,130
+Gotye/Kimbra,Sombody that I used to know,4.04,100
+Vance Joy,Riptide,3.24,130
+The Bellas,Toxic,3.21,500
+Bruno Mars,Marry you,3.50,130
+Calvin Harris/Rihanna,This is what you came for,3.42,152
+Major Lazer/Mphi/DJ Snake,Lean On,2.56,167
+Maroon5,One more night,3.39,158
+Ed Sheeran,Shape of you,3.53,198
+for KING & COUNTRY,Little drummer boy,4.11,753
+Alessia Cara,Scars to your beautiful,3.50,43
+Clean Bandit/Zara Larsson,Symphony,3.32,76
+AshishK,Symphony1,3.32,176
+AshishK,Symphony2,3.32,276
+AshishK,Symphony3,3.32,376
+AshishK,Symphony4,3.32,476
+AshishK,Symphony5,3.32,576

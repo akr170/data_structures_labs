@@ -1,0 +1,52 @@
+/*
+	  Name: 	Ashish Kumar
+Student ID: 	G04065243
+	Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 1
+*/
+
+
+EFFICIENCY WRITEUP
+
+Q: How well did the data structure selected perform for the assigned application?
+Would a different data structure work better? If so, which one and why...?
+
+The data structure that I had thought about implementing earlier worked pretty well.
+In the linked list, I am using a doubly linked list that means that each node has
+a pointer to both the previous node and the next node.  However, I found that, it
+is possible to implement all the objectives of this project using a singly linked
+list as well and that way we could end up saving significant amount of memory for
+cases where the data set size is huge.
+
+
+
+Q: What was efficient about your design and use of data structure?
+
+The good thing about using a linked list and the type of data structure we ended
+up using for the current project is that there is no performance penalty with
+growing or shrinking the size of the list.  We never need to guess size for linked 
+list. We only allocate memory when we need them. E.g. we won't allocate any memory 
+until we have a data to add.  When we need to remove a data point, we adjust the
+pointer of the adjacent nodes and then release the deleted memory back to the system.
+
+
+
+Q: What was not efficient?
+
+The inefficient part is that there is a lot of memory usage for storing a single
+data point as we not only have to store the pointer to the next data point but
+also have to store the pointer to the previous data point.  Also it is difficult
+to access data randomly as the data in the linked list does not occupy an array
+in the memory.  Since the data in linked list is not stored in the array in the
+memory, finding a particular data point for example 2323551st data point from the
+first node means traversing the first 2323550 nodes of the linked list to get to
+that 2323551st node.  Not have the ability to directly access the Nth node is
+probably the biggest disadvantage of a linked list.
+
+
+
+Q: What would you do differently if you had more time to solve the problem?
+
+I would have implemented methods and functions to handle bad user input.  I would
+have also spent time throwing more meaningful error messages to the user in case
+of bad input.

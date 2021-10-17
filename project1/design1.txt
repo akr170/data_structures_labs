@@ -1,0 +1,114 @@
+/*
+	  Name: 	Ashish Kumar
+Student ID: 	G04065243
+	Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 1
+*/
+
+DESIGN WRITE-UP
+This project need to contain two different ADTs, one for storing the data for
+a song (Song class) and another one to build a list of songs (SongList class).
+
+
+The Song ADT:
+This should contain the encapsulated variables to store song artist, song title,
+song length, the number of likes for a song.
+
+Since all 4 attributes are going to be encapsulated, we are going to need a member
+function to set and another member function to retrieve each attribute.  Along
+with setting and retreiving each attribute, we are also going to need overloaded
+operators "equals" and a friend function from ostream that will create overloaded
+operator "<<".  This overloaded operator from ostream friend function will be used
+to output data.  So in total, in the Song ADT, we are going to need 10 member
+functions and then another couple of member functions that will serve as
+constructors and destructors.
+
+The four attributes (all private) for a Song objects will be:
+ *  artist name:  This is going to be of type character pointer since we will
+                  need this to point to the artist name array.
+ *  song title:   This is also going to be of type character pointer since we
+                  will again need this to point to a song title character array
+ *  song length:  This is going to be a float since this attribute is going to
+                  store the length of the song.
+ *  song likes:   This is going to be an interger number since this attribute
+                  is going to store the likes of the song.
+
+The constructors and destructors that will be used will be named Song() and ~Song()
+
+The member functions that will be used to encapsulate the attributes are:
+
+ *  Set artist name (public member function)
+    If an artist name is already present in the Song object then this function
+    must first delete the artist name to free the memory that stored the previous
+    artist name and then assign the new artist name by pointing to the new memory.
+    Upong success this member function is going to report 
+
+ *  Set song title (public member function)
+    If the song object already stores the song title then this function must first
+    delete the title name to free the memory that stored the previous
+    song title and then assign the title by pointing to the new memory.
+
+ *  Set song length (public member function)
+    This will set the float object song length.
+
+ *  Set song likes (public member function)
+    This will set the int object song likes.
+
+ *  get artist name (public member function)
+    This member function is going to return the character pointer to the array
+    that containes the song artist name.
+
+ *  get song title (public member function)
+    This member function is going to return the character pointer to the array
+    that containes the song title.
+
+ *  get song length (public member function)
+    This member function will return the float song length.
+
+ *  get song likes (public member function)
+    This member function will return the float song likes.
+
+
+The SongList ADT:
+This should contain encapsulated varible that needs to be a struct that will store
+each node of the linked list.  Each node will carry the following information:
+    Song data pointer
+    Previous node pointer
+    Next node pointer
+We will have to write member functions to set or retireve data.
+
+There are going to following public functions:
+ *  Constructor (SongList()): A member function to initialize the object
+ *  Destructor (~SongList()): A member function to free up memory when the object
+                              is no longer needed 
+ *  Adding a song:
+        This function will be used to grow the linked list by adding a new song
+        at the tail end of the list
+    
+ *  Editing the number of likes for a song (recursive helper function):
+        This member function will take in the position and the number of likes.
+        The position will be an interger and will be used to determine the song
+        in the list for which the number of likes need to be updated.  This
+        function will need a helper function that will recursively traverse the
+        linked list and find the song for which the like needs to be edited.
+
+ *  Display all songs in a list:
+        This is a simple function that will iterate over the list and output the
+        song information for the songs stored in the list
+
+ *  Display all songs for an artist
+        In my opinion, this is going to be the most complex function to implement.
+        I think the best way to go about it is to first iterate over the song list
+        and isolate all the songs by a given artist into a new SongList.  After
+        this step, another function needs to be called that will generate a sorted
+        list by order of popularity.
+
+ *  Removing all songs with fewer than M likes
+        This is again going to be a simple function that will iteratre over the
+        song list and will delete any song with less than M likes. The key part
+        will be to implement a helper function that is going to be taking care of
+        deletion of a node.
+
+Which function/functions are recursive?
+The helper function that will edit the number of likes for a song is going to be
+recursive.
