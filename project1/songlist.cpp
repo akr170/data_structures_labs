@@ -1,21 +1,21 @@
 /*
-	  Name: 	Ashish Kumar
+      Name: 	Ashish Kumar
 Student ID: 	G04065243
-	Course: 	CS260 - Data Structures - CRN 42168
+    Course: 	CS260 - Data Structures - CRN 42168
 Assignment: 	Project 1
 This module contains the code for the member functions of the class Song
 */
 
 #include "songlist.h"
 
-//implementations for the member functions of SongList class
+// implementations for the member functions of SongList class
 
 // *****************************************************************************
 //                          PUBLIC MEMBER FUNCTIONS
 //   (Private member functions are listed after the public member functions)
 // *****************************************************************************
 
-SongList::SongList() : head(nullptr), tail(nullptr), size(0) {}
+SongList::SongList() : head(nullptr), size(0) {}
 
 
 
@@ -58,16 +58,46 @@ bool SongList::add(const Song aSong)
         true if successful
     */
     Node *newnode = new Node(aSong);
+    int curr_likes, aSong_likes = newnode->data->get_likes();
+    Node *prev_curr, *curr, *next_curr;
+    bool add_flag = true;
+
     if (!head)
     {
         head = newnode;
-        tail = newnode;
     }
     else
     {
-        tail->next = newnode;
-        newnode->prev = tail;
-        tail = newnode;
+        prev_curr = nullptr;
+        curr = head;
+        next_curr = head->next;
+        while (curr && add_flag)
+        {
+            curr_likes = curr->data->get_likes();
+            if (aSong_likes >= curr_likes)
+            {
+                if (curr == head)
+                {
+                    newnode->next = head;
+                    head = newnode;
+                }
+                else
+                {
+                    prev_curr->next = newnode;
+                    newnode->next = curr;
+                }
+                add_flag = false;
+            }
+            prev_curr = curr;
+            curr = next_curr;
+            if (next_curr)
+                next_curr = next_curr->next;
+        }
+        if (add_flag)
+        {
+            prev_curr->next = newnode;
+            add_flag = false;
+        }
     }
     size++;
     return true;
@@ -126,6 +156,15 @@ bool SongList::set_new_likes(const int song_counter, const int likes)
         true if successful
     */
     bool update_flag = set_new_likes_helper(song_counter, likes, 0, head);
+    SongList newSongList;
+    Node *curr = head;
+
+    while (curr)
+    {
+        newSongList.add(*(curr->data));
+        curr = curr->next;
+    }
+    *this = newSongList;
     return update_flag;
 }
 
@@ -143,8 +182,9 @@ bool SongList::remove_songs_fewer_than_likes(const int cutoff_likes)
         true if successful
     */
     Node *curr = head;
+    Node *prev_curr = nullptr;
+    Node *next_curr = head->next;
     int counter = 1;
-    Node *intermed;
 
     cout << endl;
     while (curr)
@@ -152,14 +192,17 @@ bool SongList::remove_songs_fewer_than_likes(const int cutoff_likes)
         if (curr->data->get_likes() < cutoff_likes)
         {
             cout << "Deleting... [" << counter << "] " << *(curr->data) << endl;
-            intermed = curr;
-            delete_a_song(curr);
-            curr = curr->next;
-            delete intermed;
+            delete_a_song(prev_curr, curr, next_curr);
+            curr = next_curr;
+            if (next_curr)
+                next_curr = next_curr->next;
         }
         else
         {
-            curr = curr->next;
+            prev_curr = curr;
+            curr = next_curr;
+            if (next_curr)
+                next_curr = next_curr->next;
         }
         counter++;
     }
@@ -191,7 +234,7 @@ const SongList SongList::get_songs_by_artist(const char *artist_name)
         curr = curr->next;
     }
 
-    return newSongList.sort_by_likes();
+    return newSongList;
 }
 
 
@@ -208,12 +251,12 @@ const SongList &SongList::operator=(const SongList &aSongList)
 
     if (!aSongList.head)
     {
-        head = tail = nullptr;
+        head = nullptr;
         return *this;
     }
 
     Node *newNode = new Node(*(aSongList.head->data));
-    head = tail = newNode;
+    head = newNode;
 
     Node *nextSrc = aSongList.head->next;
     Node *nextDes = head;
@@ -221,11 +264,9 @@ const SongList &SongList::operator=(const SongList &aSongList)
     {
         newNode = new Node(*(nextSrc->data));
         nextDes->next = newNode;
-        newNode->prev = nextDes;
         nextSrc = nextSrc->next;
         nextDes = nextDes->next;
     }
-    tail = nextDes;
     return *this;
 }
 
@@ -329,159 +370,34 @@ void SongList::saveToFile(const char *fileName) const
 //                PRIVATE MEMBER FUNCTIONS LISTED BELOW
 // *****************************************************************************
 
-
-bool SongList::delete_a_song(const Node *curr)
+bool SongList::delete_a_song(Node *prev_curr, Node *curr, Node *next_curr)
 {
     /*
-    Helper function to delete a song from the linked list.  The pointer to the 
+    Helper function to delete a song from the linked list.  The pointer to the
     node getting deleted is passed as an input to this function.
     INPUT:
+        prev_curr: pointer to the previous node of the linked list. This pointer
+                   is null when curr is at head.
         curr: ponter to the node of the linked list that need to be deleted.
+        next_curr: pointer to the next ndoe of the linked list.  This pointer is
+                   null when curr is at tail.
     OUTPUT:
         true if successful
     */
     bool deleted = false;
 
-    if (curr->prev)
+    if (prev_curr)
     {
-        curr->prev->next = curr->next;
+        prev_curr->next = next_curr;
     }
     else
     {
-        head = curr->next;
-        if (curr->next)
-        {
-            curr->next->prev = nullptr;
-        }
+        head = next_curr;
     }
-    if (curr->next)
-    {
-        curr->next->prev = curr->prev;
-    }
-    else
-    {
-        tail = curr->prev;
-        if (curr->prev)
-        {
-            curr->prev->next = nullptr;
-        }
-    }
-    // delete curr;
+    delete curr;
     deleted = true;
     --size;
     return deleted;
-}
-
-
-
-void SongList::add_song_at_head(const Song aSong)
-{
-    /*
-    Member function to add a song at head.  This is a helper function for the
-    function to sort songs by order of popularity
-    INPUT:
-        aSong: A song object that need to be inserted at the head of the linked list
-    OUTPUT:
-        None
-    */
-    Node *newnode = new Node(aSong);
-    if (!head)
-    {
-        add(aSong);
-    }
-    else
-    {
-        newnode->next = head;
-        head->prev = newnode;
-        head = newnode;
-        size++;
-    }
-}
-
-
-
-void SongList::add_song_at_curr(const Song aSong, Node *curr)
-{
-    /*
-    Member function to add a song between current node and next node.  This is a
-    helper function for the function to sort songs by order of popularity
-    INPUT:
-        aSong: A song object that need to be inserted into the linked list
-        curr: A pointer to the node after which the song object need to be inserted
-    OUTPUT:
-        None
-    */
-    Node *newnode = new Node(aSong);
-    if (!curr->next)
-    {
-        add(aSong);
-    }
-    else
-    {
-        newnode->next = curr->next;
-        newnode->prev = curr;
-
-        curr->next->prev = newnode;
-        curr->next = newnode;
-    }
-}
-
-
-
-const SongList SongList::sort_by_likes()
-{
-    /*
-    Helper function that generates a new linked list that is sorted by number of likes
-    INPUT:
-        None
-    OUTPUT:
-        a new linked list that is sorted by order of popularity
-    */
-    SongList newSongList;
-    Node *curr = head;
-    Node *newCurr;
-    int curr_likes, next_likes, likes;
-    bool flag;
-
-    while (curr)
-    {
-        if ((!newSongList.head) && (!newSongList.tail))
-        {
-            newSongList.add(*(curr->data));
-        }
-        else
-        {
-            flag = true;
-            likes = curr->data->get_likes();
-            newCurr = newSongList.head;
-            while ((newCurr) && flag)
-            {
-                curr_likes = newCurr->data->get_likes();
-                if ((!newCurr->prev) && (likes >= curr_likes))
-                {
-                    newSongList.add_song_at_head(*(curr->data));
-                    flag = false;
-                }
-                else if ((!newCurr->next) && likes <= curr_likes)
-                {
-                    newSongList.add(*(curr->data));
-                    flag = false;
-                }
-                else
-                {
-                    next_likes = newCurr->next->data->get_likes();
-                    if ((likes >= next_likes) && (likes <= curr_likes))
-                    {
-                        newSongList.add_song_at_curr(*(curr->data), newCurr);
-                        flag = false;
-                    }
-                }
-                newCurr = newCurr->next;
-            }
-        }
-        curr = curr->next;
-    }
-    return newSongList;
 }
 
 

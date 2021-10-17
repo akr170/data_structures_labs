@@ -12,11 +12,11 @@ Q: How well did the data structure selected perform for the assigned application
 Would a different data structure work better? If so, which one and why...?
 
 The data structure that I had thought about implementing earlier worked pretty well.
-In the linked list, I am using a doubly linked list that means that each node has
-a pointer to both the previous node and the next node.  However, I found that, it
-is possible to implement all the objectives of this project using a singly linked
-list as well and that way we could end up saving significant amount of memory for
-cases where the data set size is huge.
+In the linked list, I was initially using a doubly linked list that means that
+each node had a pointer to both the previous node and the next node.  However, I
+discovered that, it is possible to implement all the objectives of this project
+using a singly linked linear list as well and that way we could end up saving
+significant amount of memory for cases where the data set size is huge.
 
 
 
@@ -34,8 +34,7 @@ pointer of the adjacent nodes and then release the deleted memory back to the sy
 Q: What was not efficient?
 
 The inefficient part is that there is a lot of memory usage for storing a single
-data point as we not only have to store the pointer to the next data point but
-also have to store the pointer to the previous data point.  Also it is difficult
+data point as we have to store the pointer to the next data point. Also it is difficult
 to access data randomly as the data in the linked list does not occupy an array
 in the memory.  Since the data in linked list is not stored in the array in the
 memory, finding a particular data point for example 2323551st data point from the

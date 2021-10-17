@@ -1,7 +1,7 @@
 /*
-	  Name: 	Ashish Kumar
+      Name: 	Ashish Kumar
 Student ID: 	G04065243
-	Course: 	CS260 - Data Structures - CRN 42168
+    Course: 	CS260 - Data Structures - CRN 42168
 Assignment: 	Project 1
 */
 // Header file for Song class

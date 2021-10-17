@@ -24,8 +24,8 @@ int main()
 	// Main function: Entry point for the code.
 	SongList aSongList, newSongList;
 	char filename[] = "songlist.txt";
-	char choice_in; //variable to store user input (bad input is okay as we are storing it as char)
-	int choice = 0; //variable to store user input after it is converted to int
+	char choice_in; // variable to store user input (bad input is okay as we are storing it as char)
+	int choice = 0; // variable to store user input after it is converted to int
 	const char menu[] = "Menu Options:\n"
 						"[1] Add a new song\n"
 						"[2] Edit the number of likes for a song\n"

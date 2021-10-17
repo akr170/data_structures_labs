@@ -36,24 +36,21 @@ private:
 		Node(const Song &aSong)
 		{
 			data = new Song(aSong);
-			prev = next = nullptr;
+			next = nullptr;
 		}
 		~Node()
 		{
 			delete data;
 			data = nullptr;
-			prev = next = nullptr;
+			next = nullptr;
 		}
 		Song *data;
-		Node *prev, *next;
+		Node *next;
 	};
-	Node *head, *tail;
+	Node *head;
 	int size;
 	void destroy();
-	bool delete_a_song(const Node *curr);
-	void add_song_at_head(const Song aSong);
-	void add_song_at_curr(const Song aSong, Node *curr);
-	const SongList sort_by_likes();
+	bool delete_a_song(Node *prev_curr, Node *curr, Node *next_curr);
 	bool set_new_likes_helper(const unsigned int index, const int likes, unsigned int counter, const Node *curr);
 };
 
