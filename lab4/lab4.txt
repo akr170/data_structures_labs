@@ -1,0 +1,42 @@
+int LinkedList::sumR()
+{
+    /*
+    Public member function that serves as the entry point for the code to
+    recursively compute the sum of the values in the linked list
+    INPUT:
+        None
+    RETURNS:
+        The sum of the values stored in the linked list
+    */
+    int sum = _sumR(head);
+    return sum;
+}
+
+
+
+int LinkedList::_sumR(Node *node)
+{
+    /*
+    Private member function to recursively compute the sum of array
+    INPUT:
+        node: pointer to the current node in the linked list
+    RETURNS:
+        sum of the current node value + sum of the next node value
+    */
+    int sum = 0;
+
+    if (node)
+    {
+        sum += (node->value + _sumR(node->next));
+    }
+    return sum;
+}
+
+
+
+9 items:
+240, 185, 34, 116, 91, 179, 33, 226, 143
+total = 1247
+
+sum() =  1247
+sumR() = 1247
