@@ -1,0 +1,58 @@
+bool LinkedList::del(char ch)
+{
+    /*
+    Member function to delete a data point
+    */
+    bool deleted = del(ch, nullptr, head);
+    return deleted;
+}
+
+
+
+bool LinkedList::del(char ch, Node *curr_prev, Node *curr)
+{
+    /*
+    Recursively traverses the linked list to search for the data and then
+    deletes the first node where data is found.
+    INPUT:
+        ch: the data that needs to be deleted
+        curr_prev: the pointer to the previous node.  This is null if the
+                   current node is head
+        curr: the pointer to the current node
+    RETURNS:
+        true if deletion is successful, false otherwise.
+    */
+    bool deleted = false;
+    if (curr)
+    {
+        if (curr->data == ch)
+        {
+            if (curr_prev)
+            {
+                curr_prev->next = curr->next;
+            }
+            else
+            {
+                head = curr->next;
+            }
+            delete curr;
+            deleted = true;
+        }
+        else
+        {
+            deleted = del(ch, curr, curr->next);
+        }
+    }
+    return deleted;
+}
+
+
+
+Displaying the linked list:  x y z 
+found y
+Displaying the linked list:  x z 
+did not find y
+Displaying the linked list:  z 
+did not find y
+Displaying the linked list:  
+did not find y
