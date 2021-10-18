@@ -1,0 +1,70 @@
+int countR(node *head)
+{
+    // Recursive method to count number of nodes.
+    int counter = countR(head, head->next);
+    return counter;
+}
+
+
+
+int countR(node *head, node *curr)
+{
+    // Recursive method to count number of nodes.
+    int counter = 0;
+
+    if (curr == head)
+    {
+        counter = 1;
+    }
+    else
+    {
+        counter += 1 + countR(head, curr->next);
+    }
+    return counter;
+}
+
+
+
+int sumR(node *head)
+{
+    // Recursive method to compute sum of values stored in the nodes
+    int sum = sumR(head, head->next);
+    return sum;
+}
+
+
+
+int sumR(node *head, node *curr)
+{
+    // Recursive method to compute sum of values stored in the nodes
+    int sum = 0;
+
+    if (curr == head)
+    {
+        sum = head->data;
+    }
+    else
+    {
+        sum += curr->data + sumR(head, curr->next);
+    }
+    return sum;
+}
+
+
+
+Here is the original list: 2 -> 20 -> 5 -> 37 -> 35 -> 2 -> 80 -> 49 -> 73 -> 51 -> 81 -> 74 -> 59 -> 26 -> 2
+
+This list contains 15 number of items 
+
+
+iterative count: 15
+recursive count: 15
+iterative sum: 596
+recursive sum: 596
+
+
+The resulting list is... 2 -> 20 -> 5 -> 37 -> 35 -> 2 -> 80 -> 49 -> 73 -> 51 -> 81 -> 74 -> 59 -> 26 -> 2
+
+This list contains 15 number of items 
+The sum of all data is: 596
+# nodes freed: 15
