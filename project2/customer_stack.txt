@@ -1,0 +1,10 @@
+Jon Snow|jon.snow@pcc.edu
+Arya Stark|arya.stark@pcc.edu
+Cersei Lannister|cersei.Lannister@pcc.edu
+Sansa Stark|sansa.stark@pcc.edu
+Daenerys Targaryen|daenerys.targaryen@pcc.edu
+Tyrion Lannister|tyrion.lannister@pcc.edu
+Jamie Lannister|jamie.lannister@pcc.edu
+Bran Stark|bran.stark@pcc.edu
+Ned Stark|ned.stark@pcc.edu
+Robb Stark|robb.stark@pcc.edu

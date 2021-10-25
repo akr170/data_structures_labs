@@ -1,0 +1,148 @@
+/*
+	  Name: 	Ashish Kumar
+Student ID: 	G04065243
+	Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 2
+*/
+
+
+
+DESIGN WRITE-UP
+This project need to contain two different ADTs, one for maintaining the customer
+queue, and another one (a stack) for storing the data for the customer information
+of the latest customers.  Along with these two ADTs (a stack and a queue), we
+will also need a couple of ADTs to store the customer information: one ADT for
+customer group information for the queue and another ADT for the customer contact
+information for the stack.
+
+
+
+The Customer ADT:
+This is an ADT we would need to construct to store the group information for the
+customers who are in queue for receiving a seat in the restaurant.  This ADT
+should contain encapsulated variable to store the following information:
+  - group name
+  - group size
+  - any special requests
+  - does the customer want to recieve any promo material?
+  - customer name if the customer want to receive promo material
+  - customer email if the customer want to receive promo material
+
+Since all the above listed attributes are going to be encapsulated, we are going
+to need a member function to set and another member function to retrieve each
+attribute.  Along with setting and retreiving each attribute, we are also going
+to need overloaded operators "equals" and a friend function from ostream that will
+create overloaded operator "<<".  This overloaded operator from ostream friend
+function will be used to output data.  So in total, in the Customer ADT, we are
+going to need 14 member functions and then another three member functions that
+will serve as constructor, destructor, and assignment.
+
+
+
+The CustomerInfo ADT:
+Along the lines of Customer ADT, we would need to construct a CustomerInfo ADT and
+this will be used to store customer name and contact email inside the Stack ADT.
+Since this ADT will be only needed to store the customer name and email, this ADT
+will contain only the following two encapsulated variables:
+  - customer name
+  - customer email
+
+Instead of creating this separate CustomerInfo ADT we could have simply added the
+Customer ADT onto the stack, however, that would not have been efficient memory wise.
+The Customer ADT contains many more information than the stack needs to store.
+Also while the app will be running, the queue ADT is expected to be small since
+customers will constantly getting queued and dequeued. On the other hand the Stack ADT
+could become huge. This separate CustomerInfo ADT will help with reducing the
+overall memory consumed by Stack.
+
+Since all the above listed attributes are going to be encapsulated, we are going
+to need a member function to set and another member function to retrieve each
+attribute.  Along with setting and retreiving each attribute, we are also going
+to need overloaded operators "equals" and a friend function from ostream that will
+create overloaded operator "<<".  This overloaded operator from ostream friend
+function will be used to output data.  So in total, in the Customer ADT, we are
+going to need 6 member functions and then another three member functions that
+will serve as constructor, destructor, and assignment.
+
+
+
+The Queue ADT:
+This will be implemented with the help of a linked list and should contain
+encapsulated varible that needs to be a struct that will store each node of a
+linked list that will be used to maintain a queue. This ADT will work in conjunction
+with Customer ADT. Each node of the linked list will carry the following information:
+    Customer data pointer
+    Next node pointer
+Along with these, there will be a couple of encapsulated attributes that is going
+to store the pointer to the head and tail of the linked list. We will have to write
+member functions to set or retireve data.
+
+There are going to following public functions:
+ *  Constructor (Queue()): A member function to initialize the object
+ *  Destructor (~Queue()): A member function to free up memory when the object
+                           is no longer needed 
+ *  Enqueuing a customer group:
+        This function will be used to grow the linked list by adding a new customer
+        group information at the tail end of the list
+    
+ *  Dequeuing a customer group:
+        This member function will take in an empty Customer instance and simply
+        assign the customer group at head of the linked list to this empty
+        Customer instance. Delete the data at head and set the head to the next
+        node of the linked list.
+
+ *  Peeking a customer group:
+        This member function will take in an empty Customer instance and simply
+        assign the customer group at head of the linked list to this empty
+        Customer instance without dequeuing anything.
+
+ *  Display all customer groups in a queue
+        This is again a simple function that will iterate over the linked list
+        nodes and print out the group information on the screen.
+
+Which function/functions are recursive?
+I am going to construct the destructor function that will destroy the linked list
+as a recursive member function.  This function is going to take in head node, 
+iterate over the nodes of the linked list and then deleted the data.
+
+
+
+The Stack ADT:
+This will be implemented with the help of an CustomerInfo pointer pointer array
+and will work in conjunction with the CustomerInfo ADT.  We will need to instantiate
+the stack with an intial size of 3 with a growth factor (in this case chosen to
+be 2).  We will also need encapsulated attributes to store current capacity and
+the current total number of stored pointers in the array.
+
+There are going to following public functions:
+ *  Constructor (Stack()): A member function to initialize the object
+ *  Destructor (~Stack()): A member function to free up memory when the object
+                           is no longer needed 
+ *  Pushing a CustomerInfo onto the stack:
+        This function will be used to add a CustomerInfo data to the top of the
+        stack.
+    
+ *  Popping a CustomerInfo from the stack:
+        This member function will take in an empty CustomerInfo instance and simply
+        assign the customer group at top of the stack to this empty CustomerInfo
+        instance, delete the data the pointer at the top of the stack points to and
+        decrement the stack size.
+
+        One another thing about poppint customer information from the stack is that
+        we will need to store the popped information on to a file on the disk so
+        that the restaurant does not lose the information upon the exit of the
+        program. In the program, I am going to save the popped data in the file
+        save_customer_stack_data.txt.
+
+        Also this save data function will be needed to run again in the very end
+        before the program exits so that all the remaining data in the stack will
+        get saved into the output file.
+
+ *  Peeking a customer info:
+        This member function will take in an empty CustomerInfo instance and simply
+        assign the customer information at the top of the stack to this empty
+        CustomerInfo instance without actually decrementing the stack top pointer.
+
+ *  Display all customer information in the stack:
+        This is again a simple function that will iterate over the stack from top
+        to bottom and print out the customer information on the screen.

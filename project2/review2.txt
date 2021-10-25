@@ -1,0 +1,46 @@
+/*
+	  Name: 	Ashish Kumar
+Student ID: 	G04065243
+	Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 2
+*/
+
+
+EFFICIENCY WRITEUP
+
+Q: How well did the data structure selected perform for the assigned application?
+Would a different data structure work better? If so, which one and why...?
+
+The data structure that I had thought about implementing earlier worked pretty well.
+In my opinion the data structures I have used in the program is quite efficient
+way to manage both queue and stack.
+
+
+
+Q: What was efficient about your design and use of data structure?
+
+1. Using a linked list as a way to manage queue is very efficient because then
+   we do not have the worry about growing or shrinking the size of the queue.
+   All that is done quite efficiently by design.
+
+2. Using two separate ADT one to store customer group data for queue and another
+   one to store customer info data on to the stack, worked quite well as well.
+   This way of using two separate ADTs to store data for queue and stack is quite
+   efficient as well since we are only using the memory that we actually need.
+
+
+
+Q: What was not efficient?
+
+The inefficient part is that there is a lot of memory usage for storing a single
+data point as we have to store the pointer to the next data point to maintain the
+queue.  Also it is difficult to access data randomly as the data in the linked
+list does not occupy an array in the memory.
+
+
+
+Q: What would you do differently if you had more time to solve the problem?
+
+I would have implemented methods and functions to handle bad user input.  I would
+have also spent time throwing more meaningful error messages to the user in case
+of bad input.
