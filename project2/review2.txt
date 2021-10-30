@@ -11,9 +11,14 @@ EFFICIENCY WRITEUP
 Q: How well did the data structure selected perform for the assigned application?
 Would a different data structure work better? If so, which one and why...?
 
-The data structure that I had thought about implementing earlier worked pretty well.
-In my opinion the data structures I have used in the program is quite efficient
-way to manage both queue and stack.
+The data structure that I had thought about implementing earlier were not what
+was specified in the problem statement.  I had initially thought of implementing
+a queue with a linear linked list, however, the problem statement explicitly
+specified to use a circular linked list.  I later did end up changing the queue
+modeling to a circular linked list however, in my opinion, the program would have
+been much simpler to implement with a linear linked list.  Otherwise, the data
+structures I have used in the program are quite efficient ways to manage both
+the queue and the stack.
 
 
 

@@ -45,13 +45,18 @@ void Queue::destroy(Node *&curr)
     */
     if (curr)
     {
-        if (curr->next)
+        if (curr->next != head)
         {
             destroy(curr->next);
         }
         delete curr;
         curr = nullptr;
         --size;
+        if (size == 0)
+        {
+            head = nullptr;
+            tail = nullptr;
+        }
     }
 }
 
@@ -71,10 +76,12 @@ void Queue::enqueue(const Customer &a_customer)
     {
         head = newnode;
         tail = newnode;
+        tail->next = head;
     }
     else
     {
         tail->next = newnode;
+        newnode->next = head;
         tail = newnode;
     }
     ++size;
@@ -103,7 +110,16 @@ bool Queue::dequeue(Customer &a_customer)
     {
         Node *curr = head;
         a_customer = *(head->data);
-        head = head->next;
+        if (head == tail)
+        {
+            head = nullptr;
+            tail = nullptr;
+        }
+        else
+        {
+            head = head->next;
+            tail->next = head;
+        }
         delete curr;
         curr = nullptr;
         --size;
@@ -146,8 +162,11 @@ void Queue::display()
     Node *curr = head;
     int counter = 1;
     cout << endl;
-    while (curr)
+    bool flag = curr ? true : false;
+
+    while (flag || (curr && (curr != head)))
     {
+        flag = false;
         cout << "[" << counter << "] " << *(curr->data) << endl;
         curr = curr->next;
         counter++;
