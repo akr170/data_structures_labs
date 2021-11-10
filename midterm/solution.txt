@@ -1,0 +1,78 @@
+int sumEven(node * head)
+{
+    /*
+    Recursively computes the sum of the nodes that contain even data
+    INPUT:
+        head: pointer to the head of the linked list
+    OUTPUT:
+        sum of the even numbers in the linked list
+    */
+    int sum = 0;
+    if (head)
+    {
+        if (head->data % 2 == 0)
+        {
+            sum += head->data;
+        }
+        if (head->next)
+        {      
+            sum += sumEven(head->next);
+        }
+    }
+    return sum;
+}
+
+
+
+int tagEven(node *& head)
+{
+    /*
+    Recursively tags the nodes that contain even data
+    INPUT:
+        head: pointer to the head of the linked list
+    OUTPUT:
+        total number of nodes tagged
+    */
+    int num_tagged = 0;
+    if (head)
+    {
+        if (head->data%2==0)
+        {
+            node* newnode = new node();
+            newnode->data = -1;
+            newnode->previous = head;
+            newnode->next = head->next;
+            if (head->next)
+            {
+                head->next->previous = newnode;
+            }
+            head->next = newnode;
+            ++num_tagged;
+        }
+        if (head->next)
+        {
+            num_tagged += tagEven(head->next);
+        }
+    }
+    return num_tagged;
+}
+
+
+Here is the original list: 2 -> 2 -> 2 -> 42 -> 60 -> 2
+
+This list contains 6 number of items 
+
+
+Recursive sum of even numbers in the list: 110
+
+
+Num of elements tagged in list: 6
+
+
+The resulting list is... 2 -> -1 -> 2 -> -1 -> 2 -> -1 -> 42 -> -1 -> 60 -> -1 -> 2 -> -1
+
+
+Now backwards: -1 -> 2 -> -1 -> 60 -> -1 -> 42 -> -1 -> 2 -> -1 -> 2 -> -1 -> 2
+
+This list contains 12 number of items 
+The sum of all data is: 104
