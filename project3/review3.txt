@@ -1,0 +1,45 @@
+/*
+      Name: 	Ashish Kumar
+Student ID: 	G04065243
+    Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 2
+*/
+
+
+EFFICIENCY WRITEUP
+
+Q: How well did the data structure selected perform for the assigned application?
+Would a different data structure work better? If so, which one and why...?
+
+The data structures I have used in the program are quite efficient ways to manage both
+the queue and the stack.
+
+
+
+Q: What was efficient about your design and use of data structure?
+
+1. Using a linked list as a way to manage a chain is very efficient because then
+   we do not have the worry about growing or shrinking the size of the chain.
+   All that is done quite efficiently by design.
+
+2. In the program whenever the user enters a data for a website for which the
+   review and rating need to be edited, the program first finds whether any website
+   exists in the table that matches user information or not and then displays that
+   information to the user before asking for the next input.  I think this is a
+   good human interface design.
+
+
+
+Q: What was not efficient?
+
+The inefficient part is that although the ratings are only supposed to start at 1
+and go up to 5, there is no check to validate user input for rating.
+
+
+
+Q: What would you do differently if you had more time to solve the problem?
+
+I would have implemented methods and functions to handle bad user input and
+validate the user inputs before storing new input into the table.  I would
+have also spent time throwing more meaningful error messages to the user in case
+of bad input.

@@ -1,0 +1,57 @@
+/*
+       Name: 	Ashish Kumar
+ Student ID: 	G04065243
+     Course: 	CS260 - Data Structures - CRN 42168
+ Assignment: 	Project 3
+*/
+
+
+
+DESIGN WRITE-UP
+This project need to contain two different ADTs, one for maintaining the website data,
+and another one (a hash table) for storing the website object.
+
+
+
+The Website ADT:
+This is an ADT we would need to construct to store the website information. This ADT
+should contain encapsulated variable to store the following information:
+  - website topic
+  - website address
+  - website summary
+  - website review
+  - website rating
+
+Since all the above listed attributes are going to be encapsulated, we are going
+to need a member function to set and another member function to retrieve each
+attribute.  Along with setting and retreiving each attribute, we are also going
+to need overloaded operators "equals" and a friend function from ostream that will
+create overloaded operator "<<".  This overloaded operator from ostream friend
+function will be used to output data.  So in total, in the Website ADT, we are
+going to need 14 member functions and then another three member functions that
+will serve as constructor, destructor, and assignment.
+
+
+The Table ADT:
+This will be implemented with the help of an array and a linked list and should contain
+encapsulated varible that needs to be a struct that will store each node of a
+linked list that will be used to maintain a table chain. This ADT will work in conjunction
+with storing the head pointers of chains in an array.
+
+There are going to following public functions:
+ *  Constructor (Queue()): A member function to initialize the object
+ *  Destructor (~Queue()): A member function to free up memory when the object
+                           is no longer needed 
+ *  Adding a website to the table:
+        This function will be used to add information to the table by adding a
+        website to one of the chains
+    
+ *  Retriving website information from the table based on a topic
+ *  Deleting all websites with a rating of 1 star
+ *  Updating website reveiw and rating based on user provided topic and web address
+ *  Displaying all websites on a user provided topic
+ *  Display all websites stored in the table
+ *  Displaying the performance information of a table by displaying the chain length at each element
+
+Which function/functions are recursive?
+The destroy chain function is going to be the recursive function

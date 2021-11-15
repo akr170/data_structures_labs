@@ -1,0 +1,39 @@
+data structures|www.datastructures.com|This website contains data structures|Great website|4
+data structures1|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges|www.psu.edu|Portland State University|Also a good school|4
+portland colleges|www.osu.edu|Oregon State University|Also a good school|4
+data structures1|www.datastructures.com|This website contains data structures|Great website|4
+data structures2|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia1|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia1|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia1|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant1|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant1|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website1|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv1|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's1|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges1|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges1|www.psu.edu|Portland State University|Also a good school|4
+portland colleges1|www.osu.edu|Oregon State University|Also a good school|4
+data structures3|www.datastructures.com|This website contains data structures|Great website|4
+data structures3|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia3|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia3|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia3|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant3|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant3|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website6|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv6|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's6|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges6|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges6|www.psu.edu|Portland State University|Also a good school|4
+portland colleges6|www.osu.edu|Oregon State University|Also a good school|4
