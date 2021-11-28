@@ -1,0 +1,50 @@
+/*
+      Name: 	Ashish Kumar
+Student ID: 	G04065243
+    Course: 	CS260 - Data Structures - CRN 42168
+Assignment: 	Project 4
+*/
+
+
+EFFICIENCY WRITEUP
+
+Q: How well did the data structure selected perform for the assigned application?
+Would a different data structure work better? If so, which one and why...?
+
+The data structures I have used in the program are quite efficient ways to website data.
+
+
+
+Q: What was efficient about your design and use of data structure?
+
+Using a binary search tree as a way to store data is very efficient because then
+we do not have the worry about growing or shrinking the size of the data as a whole.
+All that is done quite efficiently by design.
+
+
+
+Q: What was not efficient?
+
+The inefficient part is that the test data that is being used in my program is resulting
+in the creation of a binary tree that is no super efficient.  I have found that the ideal
+height of the tree is quite far from the real height of the tree based on my test data.
+This is because the tree is not very good at storing information when the data
+contain quite similar entries. This results in an inefficient design as the search
+tree at some nodes are nothing but linked lists.
+
+This inefficieny of not having a balanced tree can be rectified by using another type of
+ADT tree that enables a more balanced data storage.
+
+
+
+Q: What would you do differently if you had more time to solve the problem?
+
+I would have implemented methods and functions to handle bad user input and
+validate the user inputs before storing new input into the table.  I would
+have also spent time throwing more meaningful error messages to the user in case
+of bad input.
+
+It seems that the intent of this project is to store information such that there
+are unique keywords describing each website.  Currently there is no check to ensure
+that the data entered by the user with a particular keyword already exists in the
+binary tree.  If I had more time, I would have implemented this check.

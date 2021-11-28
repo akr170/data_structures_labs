@@ -1,0 +1,39 @@
+data structures|kw1|www.datastructures.com|This website contains data structures|Great website|4
+data structures1|kw2|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia|kw3|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia|kw4|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia|kw5|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant|kw6|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant|kw7|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website|kw8|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv|kw9|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's|kw10|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges|kw11|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges|kw12|www.psu.edu|Portland State University|Also a good school|4
+portland colleges|kw13|www.osu.edu|Oregon State University|Also a good school|4
+data structures1|kw14|www.datastructures.com|This website contains data structures|Great website|4
+data structures2|kw15|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia1|kw16|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia1|kw17|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia1|kw18|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant1|kw19|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant1|kw20|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website1|kw21|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv1|kw22|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's1|kw23|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges1|kw24|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges1|kw25|www.psu.edu|Portland State University|Also a good school|4
+portland colleges1|kw26|www.osu.edu|Oregon State University|Also a good school|4
+data structures3|kw27|www.datastructures.com|This website contains data structures|Great website|4
+data structures3|kw28|www.datastructures1.com|This website contains data structures|Great website|1
+encyclopedia3|kw29|www.wikipedia.org|This website contains encyclopedia|Amazing website|5
+encyclopedia3|kw30|www.encarta.com|This website contains encyclopedia|Decent website|4
+encyclopedia3|kw31|www.britannica.com|This website contains encyclopedia|Okay website|3
+Thai Restaurant3|kw32|www.padthai.com|This website contains menu entries for a thai restaurant|Amazing place|5
+Viatnamese Restaurant3|kw33|www.viatnameseplace.com|Menu for a Viatnamese restaurant|Also an amazing place|5
+Garbage Website6|kw34|www.foxinhenhouse.com|Garbage news website|Completely made up stories|1
+dmv6|kw35|www.oregondmv.gov|Website for the department of motor vehicles|Extremely slow workers; huge lines|2
+Macy's6|kw36|www.macys.com|Fancy clothes website|Great thanksgiving sale|3
+portland colleges6|kw37|www.pcc.edu|Portland Community College|Great Courses|4
+portland colleges6|kw38|www.psu.edu|Portland State University|Also a good school|4
+portland colleges6|kw39|www.osu.edu|Oregon State University|Also a good school|4

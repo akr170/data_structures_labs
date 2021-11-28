@@ -1,0 +1,58 @@
+/*
+       Name: 	Ashish Kumar
+ Student ID: 	G04065243
+     Course: 	CS260 - Data Structures - CRN 42168
+ Assignment: 	Project 4
+*/
+
+
+
+DESIGN WRITE-UP
+This project need to contain two different ADTs, one for maintaining the website data,
+and another one (a binary search tree) for storing the website object.
+
+
+
+The Website ADT:
+This is an ADT we would need to construct to store the website information. This ADT
+should contain encapsulated variable to store the following information:
+  - website topic
+  - website keyword
+  - website address
+  - website summary
+  - website review
+  - website rating
+
+Since all the above listed attributes are going to be encapsulated, we are going
+to need a member function to set and another member function to retrieve each
+attribute.  Along with setting and retreiving each attribute, we are also going
+to need overloaded operators "equals" and a friend function from ostream that will
+create overloaded operator "<<".  This overloaded operator from ostream friend
+function will be used to output data.  So in total, in the Website ADT, we are
+going to need 14 member functions and then another three member functions that
+will serve as constructor, destructor, and assignment.
+
+
+The BinarySearchTree ADT:
+This should contain encapsulated varible that needs to be a struct that will store
+each node of a binary search tree. This ADT will work in conjunction with the 
+website ADT for storing the head pointers of the data objects.
+
+There are going to following public functions:
+ *  Constructor (Queue()): A member function to initialize the object
+ *  Destructor (~Queue()): A member function to free up memory when the object
+                           is no longer needed 
+ *  Adding a website to the table:
+        This function will be used to add information to the table by adding a
+        website to one of the chains
+    
+ *  Retriving website information from the table based on a topic
+ *  Removing all websites that have a particular topic name
+ *  Removing a website that has a particular keyword (The key consideration here is
+    that when the websites are removed using a keyword as opposed to using a topic name
+    then only one data node from the Binary Search Tree is removed)
+ *  Displaying all websites stored in the Binary Search Tree
+ *  Displaying the performance information of a tree by displaying # of nodes, height, and ideal height
+
+Which function/functions are recursive?
+All functions within the Binary Search Tree ADT are recursive
